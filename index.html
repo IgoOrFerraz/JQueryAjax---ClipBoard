@@ -1,0 +1,86 @@
+<html>
+    <head>
+
+        <link rel="shortcut icon" href="./images/favicon.ico"/>
+        <title id="titulo_pagina">ClipBoard - New || Igor_Ferraz</title>
+        <meta charset ="utf-8">
+      
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="functions.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <style>
+            input, select{
+                margin-top: 10px;
+            }
+        </style>
+
+      </head>
+      <body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+              <a class="navbar-brand" href="./index.html">
+                  <i class="fas fa-clipboard-list fa-2x"></i>
+              </a>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">New</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="search.html">Search</a>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+        </nav>
+        <section class="container">
+            
+            <div style="width: auto; height: auto;">
+                <h2 style="text-align: center; margin-top: 50px;">Add New Registration</h2>
+                <hr>
+            </div>
+            
+            <div class="row" id="content">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Name for Registration">
+                </div>
+                <div class="col-md-3">
+                    <input type="date" class="form-control" title="Date for Registration">
+                </div>
+                <div class="col-md-3">
+                    <input type="time" class="form-control" title="Time for Registration">
+                </div>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Specification">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Require">
+                </div>
+                <div class="col-md-6">
+                    <select id="btn-select" class="form-control">
+                        <option>------ Select whats Category -----</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 btns">
+                    <input type="button" class="form-control btn btn-block btn-success" value="Register">
+                    <input type="button" class="form-control btn btn-block btn-outline-success" onclick="window.location.href='./index.html'" value="Clean">
+                </div> 
+            </div>
+        </section>
+      </body>
+</html>
