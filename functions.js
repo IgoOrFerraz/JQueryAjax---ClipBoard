@@ -28,7 +28,13 @@ $(document).ready(()=>{
             'requirements': $('.reg-req').val(),
             'category': $('.reg-cat').val()
         })
+        
         console.log(reg)
+        if(reg.autentic()){
+            alert("Cadastrado com Sucesso")
+        } else{
+            alert("Erro no Cadastramento")
+        }
     })
 })
 
@@ -44,29 +50,35 @@ class Register{
         this.category = obj['category']
     }
 
-    autentic(){
-        if(
-            this.name != '' || this.name != undefined &&
-            this.date != '' || this.date != undefined &&
-            this.initial != '' || this.initial != undefined &&
-            this.final != '' || this.final != undefined &&
-            this.specification != '' || this.specification != undefined &&
-            this.requirements != '' || this.requirements != undefined &&
-            this.category != '' || this.category != undefined
-        ){
-            if(
-                this.final > this.initial &&
-                autenticdate(this.atualdate, this.date)
-            ){
-                return true
-            } else{
-                return false
-            }
+    autdate(date, atualdate){
+        let aut_date = date.split('-')
+        aut_date = aut_date[2]+'/'+aut_date[1]+'/'+aut_date[0]
+
+        let aut_atualdate = atualdate.split('-')
+        aut_atualdate = aut_atualdate[2]+'/'+aut_atualdate[1]+'/'+aut_atualdate[0]
+
+        if(aut_atualdate <= aut_date){
+            return true
         } else{
             return false
         }
     }
-    autenticdate(atualdate, date){
-        
+
+    autentic(){
+        if(
+            this.name != "" && this.name != undefined &&
+            this.date != "" && this.date != undefined &&
+            this.initial != "" && this.initial != undefined &&
+            this.final != "" && this.final != undefined &&
+            this.specification != "" && this.specification != undefined &&
+            this.requirements != "" && this.requirements != undefined &&
+            this.category != "" && this.category != undefined
+        ){
+            if(this.final > this.initial && this.autdate(this.date, this.atualdate)){
+                return true
+            }
+        } else{
+            return false
+        }
     }
 }
