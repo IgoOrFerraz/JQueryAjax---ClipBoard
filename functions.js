@@ -31,7 +31,8 @@ $(document).ready(()=>{
         
         console.log(reg)
         if(reg.autentic()){
-            alert("Cadastrado com Sucesso")
+            let conexao = new ConexStorage()
+            conexao.gravar(reg)
         } else{
             alert("Erro no Cadastramento")
         }
@@ -81,4 +82,25 @@ class Register{
             return false
         }
     }
+}
+
+class ConexStorage{
+    
+    constructor(){
+        let id = localStorage.getItem('id')
+        if(id === null){
+            localStorage.setItem('id', 0)
+        } 
+    }
+    
+    gravar(register) {
+        localStorage.setItem(this.getId(), JSON.stringify(register))
+        localStorage.setItem('id', this.getId())
+        alert("Registro Incluido com Sucesso")
+    } 
+
+    getId(){
+        let id = localStorage.getItem('id')
+        return parseInt(id) + 1
+    }   
 }

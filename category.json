@@ -1,13 +1,14 @@
 [
-    {"category":"Afazeres"},
-    {"category":"Lazer"},
+    {"category":"Tarefa"},
+    {"category":"Consulta Médica"},
     {"category":"Trabalho"},
-    {"category":"Teste1"},
-    {"category":"Teste2"},
-    {"category":"Teste3"},
-    {"category":"Teste4"},
-    {"category":"Teste5"},
-    {"category":"Teste6"},
-    {"category":"Teste7"},
-    {"category":"Teste8"}
+    {"category":"Pessoal"},
+    {"category":"Obrigações"},
+    {"category":"Namorado(a)"},
+    {"category":"Esposo(a)"},
+    {"category":"Escola"},
+    {"category":"Faculdade"},
+    {"category":"Filhos"},
+    {"category":"Academia"},
+	{"category":"Outros"}
 ]
