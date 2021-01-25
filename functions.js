@@ -37,6 +37,13 @@ $(document).ready(()=>{
             alert("Erro no Cadastramento")
         }
     })
+// RESGATANDO REGISTROS
+
+    $('.btn_registers').on('click', ()=>{
+        console.log('funfando')
+        let conex = new ConexStorage()
+        console.log(conex.getRegister());
+    })
 })
 
 class Register{
@@ -91,6 +98,17 @@ class ConexStorage{
         if(id === null){
             localStorage.setItem('id', 0)
         } 
+    }
+
+    getRegister(){
+        let qtd = localStorage.getItem('id')
+        let registers = new Array()
+        let i=0
+        for(;qtd!=0;qtd--){
+            registers[i] = localStorage.getItem(qtd)
+            i++
+        }
+        return registers
     }
     
     gravar(register) {
