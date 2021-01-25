@@ -37,13 +37,29 @@ $(document).ready(()=>{
             alert("Erro no Cadastramento")
         }
     })
-// RESGATANDO REGISTROS
 
-    $('.btn_registers').on('click', ()=>{
-        console.log('funfando')
-        let conex = new ConexStorage()
-        console.log(conex.getRegister());
+    let conex = new ConexStorage()
+    let registers = conex.getRegister()
+    let i = 0
+    console.log(registers);
+    
+    registers.forEach(()=>{
+        $('#conteudo')
+            .append(`<div class='col-sm-12'>
+                        <span>Data:</span> ${registers[i]['date']}
+                        <span>Initial:</span> ${registers[i]['initial']}
+                        <span>Final:</span> ${registers[i]['final']}
+                        <span>Name:</span> ${registers[i]['name']}
+                        <span>Requeriments:</span> ${registers[i]['requirements']}
+                        <span>Category:</span> ${registers[i]['category']}
+                        <span>Specification:</span> ${registers[i]['specification']}
+                    </div>
+                    <hr>`)
+        i++
     })
+    
+
+
 })
 
 class Register{
@@ -103,9 +119,8 @@ class ConexStorage{
     getRegister(){
         let qtd = localStorage.getItem('id')
         let registers = new Array()
-        let i=0
-        for(;qtd!=0;qtd--){
-            registers[i] = localStorage.getItem(qtd)
+        for(let i=0;qtd!=0;qtd--){
+            registers[i] = JSON.parse(localStorage.getItem(qtd))
             i++
         }
         return registers
