@@ -1,18 +1,5 @@
 $(document).ready(()=>{    
-    $.ajax({
-        url: "http://localhost/JQueryAjax---ClipBoard/category.json",
-        datatype: JSON,
-        success: (result)=>{
-            let id=0
-            result.forEach(()=>{
-                $('#btn-select').append("<option value='"+result[id]['category']+"'>"+result[id]['category']+"</option>")
-                id++
-            })
-        },
-        error: ()=>{
-            console.log("error select category")
-        } 
-    })
+    
     $('.btn-register').on('click', ()=>{
         
         let atualdate = new Date()
